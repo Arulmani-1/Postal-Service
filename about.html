@@ -11,6 +11,17 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/animation.css">
+    <style>
+        .transport-mode-card:hover .overlay {
+            background: rgba(0, 0, 0, 0.2) !important;
+        }
+        .transport-mode-card:hover .content-box {
+            transform: translateY(-5px);
+        }
+        .team-card:hover .team-overlay {
+            opacity: 1 !important;
+        }
+    </style>
 </head>
 <body>
     <div id="loader"><div class="loader-content">
@@ -75,6 +86,32 @@
                 </div>
             </div>
 
+            <!-- Corporate Service Section -->
+            <div class="row align-items-center my-5 py-5">
+                <div class="col-lg-6 pe-lg-5" data-aos="fade-right">
+                    <div class="position-relative mb-5 mb-lg-0" style="padding-bottom: 30px; padding-right: 30px;">
+                        <img src="images/highway_truck.webp" alt="Transportation" class="img-fluid w-100" style="object-fit: cover; height: 500px;">
+                        <div class="position-absolute p-4 p-md-5" style="background-color: #0b112c; bottom: 0; right: 0; width: 75%;">
+                            <h3 class="text-white fw-bold mb-0 lh-base" style="font-size: 32px;">
+                                Provide<br>freight and<br>warehousing
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0" data-aos="fade-left">
+                    <div class="text-uppercase fw-bold mb-3" style="font-size: 11px; letter-spacing: 3px; color: #111;">
+                        CORPORATE SERVICE
+                    </div>
+                    <h2 class="display-5 fw-bold mb-4 text-dark" style="font-family: 'Inter', sans-serif; line-height: 1.2;">
+                        We are the best at<br>transportation
+                    </h2>
+                    <p class="text-muted mb-5" style="font-size: 15px; line-height: 1.8;">
+                        Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
+                    </p>
+                    <a href="#" class="btn rounded-0 fw-bold px-5 py-3" style="background-color: #254ee0; color: #fff; font-size: 12px; letter-spacing: 1px;">ABOUT US</a>
+                </div>
+            </div>
+
             <!-- Achievements Section -->
             <div class="row align-items-center mt-5 pt-5 pb-4">
                 <!-- Left Content -->
@@ -133,8 +170,168 @@
                         </div>
                     </div>
                 </div>
+        </div>
+        
+        <!-- Individual Approach Section -->
+        <div class="container my-5 py-5">
+            <div class="row align-items-center">
+                <!-- Left: Images -->
+                <div class="col-lg-6 position-relative mb-5 mb-lg-0">
+                    <div class="row g-3">
+                        <div class="col-6 mt-5">
+                            <img src="images/truck_vertical.webp" alt="Truck" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
+                        </div>
+                        <div class="col-6 position-relative">
+                            <img src="images/train_vertical.webp" alt="Train" class="img-fluid rounded" style="object-fit: cover; height: 500px; width: 100%;">
+                            <!-- Play button overlay -->
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <a href="#" class="d-flex align-items-center justify-content-center bg-white text-dark rounded-circle" style="width: 60px; height: 60px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                    <i class="bi bi-play-fill fs-3 ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Text Content -->
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="text-uppercase fw-bold mb-3 d-flex align-items-center gap-3" style="font-size: 11px; letter-spacing: 3px; color: #111;">
+                        INDIVIDUAL APPROACH
+                    </div>
+                    <h2 class="display-6 fw-bold mb-4" style="color: #111; line-height: 1.2; font-family: 'Inter', sans-serif;">
+                        We truly care about<br>transportation
+                    </h2>
+                    <p class="text-muted mb-4" style="font-size: 15px; line-height: 1.8;">
+                        Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
+                    </p>
+                    <ul class="list-unstyled mb-5">
+                        <li class="mb-3 d-flex align-items-center text-dark"><i class="bi bi-check text-warning fs-4 me-2"></i> Adipiscing eli sed eiusmod</li>
+                        <li class="mb-3 d-flex align-items-center text-dark"><i class="bi bi-check text-warning fs-4 me-2"></i> Tempor incididunt</li>
+                        <li class="mb-3 d-flex align-items-center text-dark"><i class="bi bi-check text-warning fs-4 me-2"></i> Labore et dolore magna</li>
+                    </ul>
+                    <a href="#" class="btn rounded-0 fw-bold px-4 py-3" style="background-color: #ffb800; color: #fff; font-size: 12px; letter-spacing: 1px;">ABOUT US</a>
+                </div>
             </div>
+        </div>
 
+        <!-- Transport Modes Section -->
+        <div class="container-fluid px-0 mt-5">
+            <div class="row g-0">
+                <div class="col-md-4 position-relative transport-mode-card overflow-hidden" style="height: 400px; background: url('images/truck_transport.webp') center/cover;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 overlay" style="background: rgba(0, 0, 0, 0.5); transition: all 0.3s ease;"></div>
+                    <div class="position-relative z-index-2 d-flex flex-column justify-content-center align-items-center h-100 text-white p-4 text-center content-box" style="transition: transform 0.3s ease;">
+                        <h3 class="fw-bold mb-2" style="color: #ffffff !important;">Cars Transport</h3>
+                        <p class="mb-0" style="color: #ffffff !important;">This is optional subtitle</p>
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative transport-mode-card overflow-hidden" style="height: 400px; background: url('images/ship_transport.webp') center/cover;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 overlay" style="background: rgba(0, 0, 0, 0.5); transition: all 0.3s ease;"></div>
+                    <div class="position-relative z-index-2 d-flex flex-column justify-content-center align-items-center h-100 text-white p-4 text-center content-box" style="transition: transform 0.3s ease;">
+                        <h3 class="fw-bold mb-2" style="color: #ffffff !important;">Water Freight</h3>
+                        <p class="mb-0" style="color: #ffffff !important;">This is optional subtitle</p>
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative transport-mode-card overflow-hidden" style="height: 400px; background: url('images/train_transport.webp') center/cover;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 overlay" style="background: rgba(0, 0, 0, 0.5); transition: all 0.3s ease;"></div>
+                    <div class="position-relative z-index-2 d-flex flex-column justify-content-center align-items-center h-100 text-white p-4 text-center content-box" style="transition: transform 0.3s ease;">
+                        <h3 class="fw-bold mb-2" style="color: #ffffff !important;">Train Transport</h3>
+                        <p class="mb-0" style="color: #ffffff !important;">This is optional subtitle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Team Section -->
+        <div class="container my-5 py-5">
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <div class="text-uppercase fw-bold mb-3" style="font-size: 11px; letter-spacing: 3px; color: #111;">
+                        LOGISTS
+                    </div>
+                    <h2 class="display-4 fw-bold mb-4" style="color: #111; font-family: 'Inter', sans-serif;">
+                        Meet Our Team
+                    </h2>
+                    <p class="text-muted" style="font-size: 15px; line-height: 1.8;">
+                        Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Team Member 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card position-relative overflow-hidden mb-3">
+                        <img src="images/angela.webp" alt="Angela Walker" class="img-fluid w-100" style="height: 350px; object-fit: cover;">
+                        <div class="team-overlay position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-end" style="background: rgba(255, 184, 0, 0.9); opacity: 0; transition: all 0.3s ease;">
+                            <p class="text-white mb-4" style="font-size: 14px;">Consectetur adipiscing elit, sed do euism onsectetur adipiscing elit, sed.</p>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #3b5998;"><i class="bi bi-facebook fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #00aced;"><i class="bi bi-twitter fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #ea4c89;"><i class="bi bi-dribbble fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-white text-dark" style="width: 32px; height: 32px; text-decoration: none;"><i class="bi bi-instagram fs-6"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #111;">Angela Walker</h5>
+                    <p class="text-muted mb-0" style="font-size: 13px;">Senior Manager</p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card position-relative overflow-hidden mb-3">
+                        <img src="images/david.webp" alt="David Green" class="img-fluid w-100" style="height: 350px; object-fit: cover;">
+                        <div class="team-overlay position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-end" style="background: rgba(255, 184, 0, 0.9); opacity: 0; transition: all 0.3s ease;">
+                            <p class="text-white mb-4" style="font-size: 14px;">Consectetur adipiscing elit, sed do euism onsectetur adipiscing elit, sed.</p>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #3b5998;"><i class="bi bi-facebook fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #00aced;"><i class="bi bi-twitter fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #ea4c89;"><i class="bi bi-dribbble fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-white text-dark" style="width: 32px; height: 32px; text-decoration: none;"><i class="bi bi-instagram fs-6"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #111;">David Green</h5>
+                    <p class="text-muted mb-0" style="font-size: 13px;">Staff Manager</p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card position-relative overflow-hidden mb-3">
+                        <img src="images/nathan.webp" alt="Nathan Jones" class="img-fluid w-100" style="height: 350px; object-fit: cover;">
+                        <div class="team-overlay position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-end" style="background: rgba(255, 184, 0, 0.9); opacity: 0; transition: all 0.3s ease;">
+                            <p class="text-white mb-4" style="font-size: 14px;">Consectetur adipiscing elit, sed do euism onsectetur adipiscing elit, sed.</p>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #3b5998;"><i class="bi bi-facebook fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #00aced;"><i class="bi bi-twitter fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #ea4c89;"><i class="bi bi-dribbble fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-white text-dark" style="width: 32px; height: 32px; text-decoration: none;"><i class="bi bi-instagram fs-6"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #111;">Nathan Jones</h5>
+                    <p class="text-muted mb-0" style="font-size: 13px;">Warehouse Manager</p>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card position-relative overflow-hidden mb-3">
+                        <img src="images/nick.webp" alt="Nick Carter" class="img-fluid w-100" style="height: 350px; object-fit: cover;">
+                        <div class="team-overlay position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-end" style="background: rgba(255, 184, 0, 0.9); opacity: 0; transition: all 0.3s ease;">
+                            <p class="text-white mb-4" style="font-size: 14px;">Consectetur adipiscing elit, sed do euism onsectetur adipiscing elit, sed.</p>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #3b5998;"><i class="bi bi-facebook fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #00aced;"><i class="bi bi-twitter fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-white" style="width: 32px; height: 32px; text-decoration: none; background: #ea4c89;"><i class="bi bi-dribbble fs-6"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-white text-dark" style="width: 32px; height: 32px; text-decoration: none;"><i class="bi bi-instagram fs-6"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="fw-bold mb-1" style="color: #111;">Nick Carter</h5>
+                    <p class="text-muted mb-0" style="font-size: 13px;">Logistics Specialist</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
             <!-- FAQ Section -->
             <div class="mt-5 pt-5" data-aos="fade-up">
                 <div class="section-title text-center mb-5">

@@ -159,6 +159,25 @@
             padding: 0 40px;
             min-width: 250px;
         }
+        
+        .testimonial-pagination {
+            display: flex;
+            gap: 8px;
+        }
+        .testimonial-pagination .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: transparent;
+            border: 1px solid #fff;
+            opacity: 1;
+            margin: 0 !important;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        .testimonial-pagination .swiper-pagination-bullet-active {
+            background: #ffb800;
+            border-color: #ffb800;
+        }
     </style>
 </head>
 <body>
@@ -198,6 +217,19 @@
         </div>
     </nav>
 
+    <!-- Services Top Hero -->
+    <section class="py-5" style="padding-top: 180px !important; padding-bottom: 120px !important; margin-top: 0; background: url('images/services_hero_bg.webp') center/cover; position: relative;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(15, 23, 42, 0.75);"></div>
+        <div class="container text-center position-relative z-index-2">
+            <h1 class="display-3 fw-bold text-white mb-3" style="font-family: 'Inter', sans-serif;">Services</h1>
+            <div class="text-white" style="font-size: 18px; font-weight: 500;">
+                <a href="index.html" class="text-white text-decoration-none hover-warning">Home</a> 
+                <span style="color: #ffb800; margin: 0 8px; font-weight: bold;">&rsaquo;</span> 
+                <span style="color: #ffb800;">Services</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Page Header Hero -->
     <section class="shipping-hero" style="position: relative; min-height: 650px; background: #fff; overflow: hidden;">
         <!-- Right Background Image -->
@@ -220,6 +252,92 @@
                         </p>
                         <a href="#" class="btn rounded-0 fw-bold text-white px-5 py-3" style="background-color: #ffb800; font-size: 13px; letter-spacing: 1.5px; border: none; transition: 0.3s; box-shadow: 0 10px 20px rgba(255, 184, 0, 0.2);">DISCOVER MORE</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Services Section -->
+    <section class="top-services-section py-5 my-5">
+        <div class="container">
+            <div class="row mb-5 pb-4">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="text-uppercase fw-bold mb-3" style="font-size: 11px; letter-spacing: 3px; color: #111;">
+                        TOP SERVICES
+                    </div>
+                    <h2 class="display-5 fw-bold text-dark" style="font-family: 'Inter', sans-serif; line-height: 1.1; letter-spacing: -1px;">
+                        Our sevices make your<br>work more productive
+                    </h2>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <p class="text-muted mb-4" style="font-size: 15px; line-height: 1.8;">
+                        Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                    <p class="text-muted mb-0" style="font-size: 15px; line-height: 1.8;">
+                        Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-0 border-top border-bottom" style="border-color: #eee !important;">
+                <!-- Service 1 -->
+                <div class="col-lg-3 col-md-6 border-end p-4 p-lg-5" style="border-color: #eee !important;" data-aos="fade-up" data-aos-delay="0">
+                    <div class="mb-4" style="color: #10a81d;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="fw-bold mb-5" style="color: #111; font-size: 19px; line-height: 1.3;">Contract<br>Logistics</h4>
+                    <a href="#" class="text-dark text-decoration-none"><i class="bi bi-arrow-right fs-5"></i></a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-lg-3 col-md-6 border-end p-4 p-lg-5" style="border-color: #eee !important;" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-4" style="color: #10a81d;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="fw-bold mb-5" style="color: #111; font-size: 19px; line-height: 1.3;">Source<br>Optimization</h4>
+                    <a href="#" class="text-dark text-decoration-none"><i class="bi bi-arrow-right fs-5"></i></a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-lg-3 col-md-6 border-end p-4 p-lg-5" style="border-color: #eee !important;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-4" style="color: #10a81d;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="14" width="20" height="8" rx="1"></rect>
+                            <path d="M12 14v-4"></path>
+                            <path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
+                            <line x1="6" y1="14" x2="6" y2="22"></line>
+                            <line x1="10" y1="14" x2="10" y2="22"></line>
+                            <line x1="14" y1="14" x2="14" y2="22"></line>
+                            <line x1="18" y1="14" x2="18" y2="22"></line>
+                        </svg>
+                    </div>
+                    <h4 class="fw-bold mb-5" style="color: #111; font-size: 19px; line-height: 1.3;">Warehousing<br>and Storage</h4>
+                    <a href="#" class="text-dark text-decoration-none"><i class="bi bi-arrow-right fs-5"></i></a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="col-lg-3 col-md-6 p-4 p-lg-5" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-4" style="color: #10a81d;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="8"></circle>
+                            <polyline points="12 8 12 12 14 14"></polyline>
+                            <line x1="1" y1="12" x2="4" y2="12"></line>
+                            <line x1="2" y1="16" x2="5" y2="16"></line>
+                            <line x1="3" y1="8" x2="6" y2="8"></line>
+                        </svg>
+                    </div>
+                    <h4 class="fw-bold mb-5" style="color: #111; font-size: 19px; line-height: 1.3;">Retail & Transit<br>Packaging</h4>
+                    <a href="#" class="text-dark text-decoration-none"><i class="bi bi-arrow-right fs-5"></i></a>
                 </div>
             </div>
         </div>
@@ -596,6 +714,62 @@
         </div>
     </section>
 
+    <!-- Testimonial Section -->
+    <section class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left Side: Slider -->
+            <div class="col-lg-6 d-flex justify-content-center" style="background-color: #0b112c; padding: 100px 50px;">
+                <div class="swiper testimonial-swiper position-relative w-100" style="max-width: 500px;">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide d-flex flex-column justify-content-center">
+                            <div class="text-warning fw-bold mb-4" style="font-family: serif; font-size: 70px; line-height: 1;">"</div>
+                            <p class="text-white mb-5" style="font-size: 15px; line-height: 1.8;">
+                                Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed. Beatae vitae dicta.<br><br>Adipiscing elit, sed do eiusmod tempor incididunt.
+                            </p>
+                            <div>
+                                <h5 class="text-white fw-bold mb-1" style="font-size: 16px;">Andrew Morris</h5>
+                                <p class="mb-0" style="color: #9ba6c5; font-size: 13px;">PR Manager</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide d-flex flex-column justify-content-center">
+                            <div class="text-warning fw-bold mb-4" style="font-family: serif; font-size: 70px; line-height: 1;">"</div>
+                            <p class="text-white mb-5" style="font-size: 15px; line-height: 1.8;">
+                                Vitae beatae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed. Beatae vitae dicta.<br><br>Adipiscing elit, sed do eiusmod tempor incididunt.
+                            </p>
+                            <div>
+                                <h5 class="text-white fw-bold mb-1" style="font-size: 16px;">Natalie Jones</h5>
+                                <p class="mb-0" style="color: #9ba6c5; font-size: 13px;">Sales Manager</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide d-flex flex-column justify-content-center">
+                            <div class="text-warning fw-bold mb-4" style="font-family: serif; font-size: 70px; line-height: 1;">"</div>
+                            <p class="text-white mb-5" style="font-size: 15px; line-height: 1.8;">
+                                Dicta beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed. Beatae vitae dicta.<br><br>Adipiscing elit, sed do eiusmod tempor incididunt.
+                            </p>
+                            <div>
+                                <h5 class="text-white fw-bold mb-1" style="font-size: 16px;">Brian Woods</h5>
+                                <p class="mb-0" style="color: #9ba6c5; font-size: 13px;">Business Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Custom Pagination -->
+                    <div class="testimonial-pagination mt-5"></div>
+                </div>
+            </div>
+            <!-- Right Side: Image and Play Button -->
+            <div class="col-lg-6 position-relative" style="background: url('images/train_railyard.webp') center/cover; min-height: 500px;">
+                <div class="position-absolute top-50 start-50 translate-middle">
+                    <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-white text-dark shadow text-decoration-none" style="width: 80px; height: 80px; transition: transform 0.3s;">
+                        <i class="bi bi-play-fill" style="font-size: 40px; color: #0b112c; margin-left: 5px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-5 text-center gradient-bg text-white">
         <div class="container py-5" data-aos="zoom-in">
@@ -681,6 +855,19 @@
                     992: {
                         slidesPerView: 4,
                     }
+                }
+            });
+            
+            var testimonialSwiper = new Swiper('.testimonial-swiper', {
+                slidesPerView: 1,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.testimonial-pagination',
+                    clickable: true,
                 }
             });
         });
