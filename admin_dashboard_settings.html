@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Postal Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Overlay -->
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="admin_dashboard.html">
+                    <img src="images/logo.webp" alt="Stackly Logo" class="sidebar-logo">
+                </a>
+            </div>
+            
+            <div class="sidebar-menu">
+                <div class="menu-title">Admin Controls</div>
+                <ul>
+                    <li><a href="admin_dashboard.html"><i class="bi bi-speedometer2"></i> System Overview</a></li>
+                    <li><a href="admin_dashboard_shipments.html"><i class="bi bi-box-seam"></i> All Shipments</a></li>
+                    <li><a href="admin_dashboard_users.html"><i class="bi bi-people"></i> Manage Users</a></li>
+                    <li><a href="admin_dashboard_fleet.html"><i class="bi bi-truck"></i> Fleet Status</a></li>
+                </ul>
+                
+                <div class="menu-title mt-4">Configuration</div>
+                <ul>
+                    <li><a href="admin_dashboard_analytics.html"><i class="bi bi-graph-up-arrow"></i> Reports & Analytics</a></li>
+                    <li><a href="admin_dashboard_settings.html" class="active"><i class="bi bi-gear"></i> System Settings</a></li>
+                </ul>
+            </div>
+            
+            </aside>
+
+        <!-- Main Content -->
+        <main class="main-wrapper">
+            
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+                <div class="d-flex align-items-center">
+                    <button class="mobile-toggle" onclick="toggleSidebar()">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <h5 class="mb-0 ms-2 fw-bold text-dark d-none d-md-block">Welcome back, <span class="user-name-display">Admin</span></h5>
+                </div>
+                
+                <div class="navbar-actions d-flex align-items-center"><span class="user-email-display me-3 fw-bold text-muted" style="font-size: 14px;"></span>
+                    
+                    
+                    <a href="login.html" class="action-btn text-danger ms-3" title="Logout">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area">
+    <div class="page-header"><h1 class="page-title">System Settings</h1><button class="btn btn-primary shadow-sm">Save Configuration</button></div>
+    <div class="card border-0 shadow-sm p-4">
+        <h5 class="mb-4 border-bottom pb-2">General Configuration</h5>
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Platform Name</label>
+                <input type="text" class="form-control" value="Postal Service">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Support Email Address</label>
+                <input type="email" class="form-control" value="support@postal.com">
+            </div>
+            <div class="col-md-6 mt-md-4">
+                <div class="form-check form-switch d-flex align-items-center mb-2 ps-0">
+                    <input class="form-check-input ms-0 me-3 mt-0" type="checkbox" id="maintenanceMode" style="width: 45px; height: 22px; cursor: pointer;">
+                    <label class="form-check-label fw-semibold m-0" for="maintenanceMode" style="cursor: pointer;">Enable Maintenance Mode</label>
+                </div>
+                <small class="text-muted d-block" style="padding-left: 60px;">Displays a maintenance page to all non-admin users.</small>
+            </div>
+            <div class="col-md-6 mt-md-4">
+                <div class="form-check form-switch d-flex align-items-center mb-2 ps-0">
+                    <input class="form-check-input ms-0 me-3 mt-0" type="checkbox" id="registration" checked style="width: 45px; height: 22px; cursor: pointer;">
+                    <label class="form-check-label fw-semibold m-0" for="registration" style="cursor: pointer;">Allow New User Registrations</label>
+                </div>
+                <small class="text-muted d-block" style="padding-left: 60px;">Allows users to sign up for accounts globally.</small>
+            </div>
+        </div>
+        
+        <h5 class="mb-4 border-bottom pb-2">API Integrations</h5>
+        <div class="row g-4">
+            <div class="col-12">
+                <label class="form-label fw-semibold">Stripe Public Key</label>
+                <input type="text" class="form-control" value="pk_test_51Nx...XXXX">
+            </div>
+            <div class="col-12">
+                <label class="form-label fw-semibold">Google Maps API Key</label>
+                <input type="password" class="form-control" value="AIzaSyAXXXX...XXXX">
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('show');
+            document.querySelector('.sidebar-overlay').classList.toggle('show');
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const email = localStorage.getItem('userEmail');
+            if(email) {
+                document.querySelectorAll('.user-email-display').forEach(el => el.textContent = email);
+            }
+            const name = localStorage.getItem('userName');
+            if(name) {
+                document.querySelectorAll('.user-name-display').forEach(el => el.textContent = name);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Postal Service</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animation.css">
+    
+    <style>
+        .service-slider-section {
+            padding: 80px 0;
+            background: #ffffff;
+            text-align: center;
+        }
+        .ss-label {
+            color: #333;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .ss-label::before {
+            content: '';
+            display: block;
+            width: 3px;
+            height: 14px;
+            background: #ff8a00;
+        }
+        .ss-title {
+            font-size: 38px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 50px;
+        }
+        .ss-title strong {
+            font-weight: 600;
+            color: #ff8a00;
+        }
+
+        .custom-service-card {
+            background: #fff;
+            border: 1px solid #eaeaea;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 280px;
+            transition: all 0.3s ease;
+        }
+        .custom-service-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-color: #ff8a00;
+        }
+        .csc-top-area {
+            background: #f8f9fa;
+            position: relative;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 150px;
+            margin-bottom: 20px;
+        }
+        .csc-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: #ff8a00;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .csc-icon svg {
+            width: 70px;
+            height: 70px;
+        }
+        .csc-bottom-area {
+            padding: 0 10px 10px;
+            background: #fff;
+            text-align: center;
+        }
+        .csc-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 15px;
+        }
+        .csc-arrow {
+            color: #111;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+        .custom-service-card:hover .csc-arrow {
+            color: #ff8a00;
+        }
+        
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: #ccc;
+            opacity: 1;
+            border-radius: 0; /* Square bullets as per image */
+        }
+        .swiper-pagination-bullet-active {
+            background: #ff8a00;
+        }
+        .service-swiper {
+            padding-bottom: 60px;
+        }
+
+        /* Partner Logos Marquee Section */
+        .partner-marquee-section {
+            background: #111111;
+            padding: 40px 0;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .marquee-wrapper {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+        .marquee-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: max-content;
+            padding: 0 30px;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .partner-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: 0 40px;
+            min-width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div id="scroll-progress"></div>
+    <div id="loader"><div class="loader-content">
+            <img src="images/logo.webp" alt="Loading...">
+        </div></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background: #0f172a !important;">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand fw-bold" href="index.html" style="color: #0d6efd;">
+                <img src="images/logo.webp" alt="Stackly Logo" style="height: 55px; width: auto; object-fit: contain;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-1 text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active text-white" href="services.html">Services</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ourteam.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="404.html">404 Error Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white" href="tracking.html">Tracking</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="btn btn-login-custom ms-lg-3" href="login.html">Login <i class="bi bi-arrow-right"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="shipping-hero" style="position: relative; min-height: 650px; background: #fff; overflow: hidden;">
+        <!-- Right Background Image -->
+        <div style="position: absolute; top: 0; right: 0; width: 65%; height: 100%; background: url('images/tracking.webp') center/cover no-repeat; z-index: 1;"></div>
+        
+        <div class="container-fluid p-0 h-100" style="position: relative; z-index: 2;">
+            <div class="row g-0 h-100 align-items-center" style="min-height: 650px;">
+                <!-- Left White Box -->
+                <div class="col-lg-5 col-md-8 bg-white" style="padding: 100px 60px 100px 8%; margin-top: 80px; box-shadow: 15px 0 40px rgba(0,0,0,0.08);">
+                    <div data-aos="fade-right">
+                        <div class="text-uppercase fw-bold mb-3 d-flex align-items-center gap-3" style="font-size: 14px; letter-spacing: 4px; color: #111;">
+                            <span style="width: 3px; height: 18px; background-color: #ffb800;"></span> LOGISTIC
+                        </div>
+                        <h1 class="fw-bold mb-4" style="font-size: 65px; color: #111; line-height: 1.1; font-family: 'Inter', sans-serif;">
+                            Best Shipping <br>
+                            <span style="color: #ffb800;">Partner</span>
+                        </h1>
+                        <p class="text-muted mb-5" style="font-size: 15px; line-height: 1.8; color: #555; padding-right: 20px;">
+                            Amet, tempus egestas facilisis volutpat viverra molestie lobortis posuere maecenas. molestie lobortis posuere maecenas. Eget sapien, gravida nequi.
+                        </p>
+                        <a href="#" class="btn rounded-0 fw-bold text-white px-5 py-3" style="background-color: #ffb800; font-size: 13px; letter-spacing: 1.5px; border: none; transition: 0.3s; box-shadow: 0 10px 20px rgba(255, 184, 0, 0.2);">DISCOVER MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get The Best Services Slider -->
+    <section class="service-slider-section">
+        <div class="container">
+            <div class="ss-label" data-aos="fade-up">SERVICE</div>
+            <h2 class="ss-title" data-aos="fade-up" data-aos-delay="100">Get The <strong>Best Services</strong></h2>
+            
+            <div class="swiper service-swiper mt-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1: Air Freight -->
+                    <div class="swiper-slide">
+                        <div class="custom-service-card">
+                            <div class="csc-top-area">
+                                <span class="csc-number">01</span>
+                                <div class="csc-icon">
+                                    <svg viewBox="0 0 64 64" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round">
+                                        <path d="M32 10 C28 10 26 14 26 22 L26 46 C26 50 28 54 32 54 C36 54 38 50 38 46 L38 22 C38 14 36 10 32 10 Z" />
+                                        <path d="M26 30 L6 36 L6 40 L26 36" />
+                                        <path d="M38 30 L58 36 L58 40 L38 36" />
+                                        <path d="M26 46 L14 52 L14 54 L28 51" />
+                                        <path d="M38 46 L50 52 L50 54 L36 51" />
+                                        <path d="M26 26 L38 26" stroke="#ff8a00" />
+                                        <path d="M32 40 L32 54" stroke="#ff8a00" />
+                                        <path d="M12 44 L20 44" stroke="#ff8a00" />
+                                        <path d="M44 44 L52 44" stroke="#ff8a00" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="csc-bottom-area">
+                                <h4 class="csc-title">Air Freight</h4>
+                                <a href="#" class="csc-arrow"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2: Sea Freight -->
+                    <div class="swiper-slide">
+                        <div class="custom-service-card">
+                            <div class="csc-top-area">
+                                <span class="csc-number">02</span>
+                                <div class="csc-icon">
+                                    <svg viewBox="0 0 64 64" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round">
+                                        <path d="M6 40 L12 50 L52 50 L58 40 Z" fill="#ff8a00" stroke="#111" />
+                                        <path d="M14 40 L14 28 L26 28 L26 40" />
+                                        <path d="M26 40 L26 22 L38 22 L38 40" />
+                                        <path d="M38 40 L38 30 L50 30 L50 40" />
+                                        <path d="M44 22 L44 14 L54 14 L54 30" />
+                                        <line x1="8" y1="56" x2="16" y2="56" stroke="#111" />
+                                        <line x1="24" y1="56" x2="32" y2="56" stroke="#111" />
+                                        <line x1="40" y1="56" x2="48" y2="56" stroke="#111" />
+                                        <path d="M6 54 Q10 58 14 54 T22 54 T30 54 T38 54 T46 54 T54 54 T62 54" stroke="#ff8a00" fill="none" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="csc-bottom-area">
+                                <h4 class="csc-title">Sea Freight</h4>
+                                <a href="#" class="csc-arrow"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3: Ground Freight -->
+                    <div class="swiper-slide">
+                        <div class="custom-service-card">
+                            <div class="csc-top-area">
+                                <span class="csc-number">03</span>
+                                <div class="csc-icon">
+                                    <svg viewBox="0 0 64 64" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round">
+                                        <rect x="6" y="20" width="32" height="24" fill="#fff" stroke="#111"/>
+                                        <path d="M38 28 L48 28 L54 36 L54 44 L38 44 Z" fill="#ff8a00" stroke="#111"/>
+                                        <circle cx="16" cy="44" r="5" fill="#fff" stroke="#111"/>
+                                        <circle cx="44" cy="44" r="5" fill="#fff" stroke="#111"/>
+                                        <rect x="42" y="30" width="6" height="6" fill="#fff" stroke="#111"/>
+                                        <path d="M22 20 L22 44" stroke="#ff8a00"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="csc-bottom-area">
+                                <h4 class="csc-title">Ground Freight</h4>
+                                <a href="#" class="csc-arrow"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4: Track & Trace -->
+                    <div class="swiper-slide">
+                        <div class="custom-service-card">
+                            <div class="csc-top-area">
+                                <span class="csc-number">04</span>
+                                <div class="csc-icon">
+                                    <svg viewBox="0 0 64 64" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round">
+                                        <rect x="18" y="10" width="28" height="44" rx="4" fill="#fff" stroke="#111"/>
+                                        <rect x="22" y="14" width="20" height="32" fill="#fff" stroke="#111"/>
+                                        <line x1="28" y1="50" x2="36" y2="50" stroke="#111" />
+                                        <path d="M32 20 C28 20 25 23 25 27 C25 32 32 38 32 38 C32 38 39 32 39 27 C39 23 36 20 32 20 Z" fill="#ff8a00" stroke="#111"/>
+                                        <circle cx="32" cy="27" r="2" fill="#fff" stroke="#111"/>
+                                        <rect x="24" y="34" width="16" height="12" fill="#ff8a00" stroke="#111"/>
+                                        <line x1="32" y1="34" x2="32" y2="46" stroke="#111"/>
+                                        <line x1="24" y1="40" x2="40" y2="40" stroke="#111"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="csc-bottom-area">
+                                <h4 class="csc-title">Track &amp; Trace</h4>
+                                <a href="#" class="csc-arrow"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5: Drone Freight -->
+                    <div class="swiper-slide">
+                        <div class="custom-service-card">
+                            <div class="csc-top-area">
+                                <span class="csc-number">05</span>
+                                <div class="csc-icon">
+                                    <svg viewBox="0 0 64 64" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round">
+                                        <path d="M4 22 L20 22" stroke="#111"/>
+                                        <path d="M44 22 L60 22" stroke="#111"/>
+                                        <path d="M12 18 L12 26" stroke="#ff8a00"/>
+                                        <path d="M52 18 L52 26" stroke="#ff8a00"/>
+                                        <path d="M12 22 L24 30 L40 30 L52 22" />
+                                        <rect x="26" y="26" width="12" height="6" rx="2" fill="#fff" stroke="#111" />
+                                        <line x1="26" y1="32" x2="26" y2="44" stroke="#ff8a00" />
+                                        <line x1="38" y1="32" x2="38" y2="44" stroke="#ff8a00" />
+                                        <rect x="22" y="44" width="20" height="16" fill="#fff" stroke="#111" />
+                                        <line x1="22" y1="52" x2="42" y2="52" stroke="#111" />
+                                        <line x1="32" y1="44" x2="32" y2="60" stroke="#111" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="csc-bottom-area">
+                                <h4 class="csc-title">Drone Freight</h4>
+                                <a href="#" class="csc-arrow"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services Grid -->
+    <section class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Our Complete Solutions</h2>
+                <p class="text-muted">Comprehensive delivery and supply chain services designed for you.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Service 1 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-4 h-100 border-top border-primary border-4 text-center" data-tilt data-tilt-max="10">
+                        <div class="display-4 mb-3">📦</div>
+                        <h4 class="fw-bold fs-5">Domestic Delivery</h4>
+                        <p class="text-muted small">Fast and secure parcel delivery across the country. Same-day and next-day delivery options.</p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card p-4 h-100 border-top border-secondary border-4 text-center" data-tilt data-tilt-max="10">
+                        <div class="display-4 mb-3">🌍</div>
+                        <h4 class="fw-bold fs-5">International Shipping</h4>
+                        <p class="text-muted small">Worldwide shipping with customs support. Real-time tracking for global deliveries.</p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-card p-4 h-100 border-top border-accent border-4 text-center" data-tilt data-tilt-max="10">
+                        <div class="display-4 mb-3">🚚</div>
+                        <h4 class="fw-bold fs-5">Express Delivery</h4>
+                        <p class="text-muted small">Urgent and time-sensitive deliveries. Guaranteed delivery within the promised time.</p>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-card p-4 h-100 border-top border-success border-4 text-center" data-tilt data-tilt-max="10">
+                        <div class="display-4 mb-3">📍</div>
+                        <h4 class="fw-bold fs-5">Package Tracking</h4>
+                        <p class="text-muted small">Live shipment tracking using a tracking ID. SMS and email delivery notifications.</p>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="glass-card p-4 h-100 border-top border-primary border-4 text-center" data-tilt data-tilt-max="10">
+                        <div class="display-4 mb-3">🏢</div>
+                        <h4 class="fw-bold fs-5">Warehousing & Logistics</h4>
+                        <p class="text-muted small">Secure storage facilities. Inventory management and distribution.</p>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="glass-card p-4 h-100 border-top border-secondary border-4 text-center" data-tilt data-tilt-max="10">
+                        <div class="display-4 mb-3">📬</div>
+                        <h4 class="fw-bold fs-5">Mail Services</h4>
+                        <p class="text-muted small">Letters, documents, registered post, and certified mail.</p>
+                    </div>
+                </div>
+                <!-- Service 7 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="glass-card p-4 h-100 border-top border-accent border-4 text-center" data-tilt data-tilt-max="10">
+                        <div class="display-4 mb-3">💼</div>
+                        <h4 class="fw-bold fs-5">Business Solutions</h4>
+                        <p class="text-muted small">Bulk shipping for e-commerce and enterprises. Scheduled pickups and logistics management.</p>
+                    </div>
+                </div>
+                <!-- Service 8 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="800">
+                    <div class="glass-card p-4 h-100 border-top border-success border-4 text-center" data-tilt data-tilt-max="10">
+                        <div class="display-4 mb-3">🔒</div>
+                        <h4 class="fw-bold fs-5">Secure Parcel Handling</h4>
+                        <p class="text-muted small">Tamper-proof packaging. Insurance options for valuable shipments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Logos Marquee Section -->
+    <section class="partner-marquee-section">
+        <div class="marquee-wrapper">
+            <!-- First set of logos -->
+            <div class="marquee-content">
+                
+                <!-- Logo 1: QUICKAIR -->
+                <div class="partner-logo" style="flex-direction: column; gap: 5px;">
+                    <svg width="45" height="45" viewBox="0 0 50 50" fill="#ff8a00">
+                        <path d="M42 8 L22 24 L8 22 L5 27 L20 33 L15 42 L10 42 L8 46 L18 47 L25 50 L27 46 L23 38 L30 31 L42 42 L46 39 L33 22 L47 11 Z" />
+                    </svg>
+                    <div style="font-size: 18px; font-weight: 700; font-family: 'Times New Roman', serif; color: #fff; line-height: 1.1;">QUICKAIR</div>
+                    <div style="font-size: 11px; color: #ff8a00; font-style: italic;">Worldwide delivery.</div>
+                </div>
+
+                <!-- Logo 2: 24H Express -->
+                <div class="partner-logo">
+                    <div style="display:flex; flex-direction: column; align-items: flex-start; line-height: 1;">
+                        <div style="display:flex; align-items: center; gap: 5px;">
+                            <span style="color:#ff8a00; font-size: 22px; font-weight: 800;">24H</span>
+                            <svg width="35" height="20" viewBox="0 0 40 20" fill="none" stroke="#fff" stroke-width="1.5">
+                                <path d="M2 10 L12 10 M3 15 L8 15 M15 10 C15 10 20 5 28 5 C32 5 35 8 35 10 C35 13 32 15 28 15 L20 15 Z" />
+                                <path d="M25 5 L20 -2 L18 0 L22 5" />
+                                <path d="M30 5 L35 0 L38 2 L33 7" />
+                            </svg>
+                        </div>
+                        <div style="font-size: 22px; font-weight: 700; color: #fff;">
+                            Expre<span style="color:#ff8a00; font-family: cursive;">ss</span>
+                        </div>
+                        <div style="font-size: 10px; color:#ff8a00; font-style: italic; margin-top: 4px;">Choose the right way.</div>
+                    </div>
+                </div>
+
+                <!-- Logo 3: fastdelivery -->
+                <div class="partner-logo" style="flex-direction: column; gap: 5px;">
+                    <div style="display:flex; align-items:center;">
+                        <svg width="45" height="45" viewBox="0 0 64 64" fill="none">
+                            <path d="M8 26 L28 26 M4 34 L24 34 M12 42 L32 42" stroke="#ff8a00" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="46" cy="14" r="5" fill="#fff" />
+                            <path d="M46 22 L36 34 L28 30 M46 22 L48 34 L56 28 M46 22 L46 38 L40 48 L34 56 M46 38 L54 48 L50 60" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="52" y="6" width="10" height="10" fill="#111" stroke="#fff" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div style="font-size: 15px; font-weight: 700; letter-spacing: -0.5px;">
+                        <span style="color:#fff;">fast</span><span style="color:#ff8a00;">delivery</span>
+                    </div>
+                </div>
+
+                <!-- Logo 4: EXPRESS DELIVERY -->
+                <div class="partner-logo" style="flex-direction: column; gap: 5px;">
+                    <svg width="65" height="45" viewBox="0 0 80 50" fill="none">
+                        <path d="M10 15 L40 15 M5 25 L35 25 M15 35 L45 35" stroke="#ff8a00" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="55" cy="25" r="16" stroke="#fff" stroke-width="4"/>
+                        <polyline points="55,15 55,25 63,25" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div style="font-size: 14px; text-align: center; font-weight: 700; line-height: 1.1; letter-spacing: 0.5px;">
+                        <div style="color:#fff;">EXPRESS</div>
+                        <div style="color:#ff8a00;">DELIVERY</div>
+                    </div>
+                </div>
+
+                <!-- Logo 5: AIR EXPRESS -->
+                <div class="partner-logo" style="gap: 12px;">
+                    <div style="text-align: right; line-height: 1.1;">
+                        <div style="color:#fff; font-size: 20px; font-weight: 700; font-family: 'Times New Roman', serif;">AIR</div>
+                        <div style="color:#ff8a00; font-size: 17px; font-weight: 700; letter-spacing: 0.5px;">EXPRESS</div>
+                        <div style="color:#fff; font-size: 10px; font-style: italic; margin-top: 2px;">Choose the right way.</div>
+                    </div>
+                    <svg width="35" height="35" viewBox="0 0 40 40" fill="#ff8a00">
+                        <path d="M5 35 L35 35 L35 5 C35 5 25 15 15 35 Z" />
+                        <line x1="8" y1="18" x2="30" y2="18" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="5" y1="26" x2="22" y2="26" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+            </div>
+
+            <!-- Second set of logos (Duplicate for infinite scroll) -->
+            <div class="marquee-content">
+                
+                <!-- Logo 1: QUICKAIR -->
+                <div class="partner-logo" style="flex-direction: column; gap: 5px;">
+                    <svg width="45" height="45" viewBox="0 0 50 50" fill="#ff8a00">
+                        <path d="M42 8 L22 24 L8 22 L5 27 L20 33 L15 42 L10 42 L8 46 L18 47 L25 50 L27 46 L23 38 L30 31 L42 42 L46 39 L33 22 L47 11 Z" />
+                    </svg>
+                    <div style="font-size: 18px; font-weight: 700; font-family: 'Times New Roman', serif; color: #fff; line-height: 1.1;">QUICKAIR</div>
+                    <div style="font-size: 11px; color: #ff8a00; font-style: italic;">Worldwide delivery.</div>
+                </div>
+
+                <!-- Logo 2: 24H Express -->
+                <div class="partner-logo">
+                    <div style="display:flex; flex-direction: column; align-items: flex-start; line-height: 1;">
+                        <div style="display:flex; align-items: center; gap: 5px;">
+                            <span style="color:#ff8a00; font-size: 22px; font-weight: 800;">24H</span>
+                            <svg width="35" height="20" viewBox="0 0 40 20" fill="none" stroke="#fff" stroke-width="1.5">
+                                <path d="M2 10 L12 10 M3 15 L8 15 M15 10 C15 10 20 5 28 5 C32 5 35 8 35 10 C35 13 32 15 28 15 L20 15 Z" />
+                                <path d="M25 5 L20 -2 L18 0 L22 5" />
+                                <path d="M30 5 L35 0 L38 2 L33 7" />
+                            </svg>
+                        </div>
+                        <div style="font-size: 22px; font-weight: 700; color: #fff;">
+                            Expre<span style="color:#ff8a00; font-family: cursive;">ss</span>
+                        </div>
+                        <div style="font-size: 10px; color:#ff8a00; font-style: italic; margin-top: 4px;">Choose the right way.</div>
+                    </div>
+                </div>
+
+                <!-- Logo 3: fastdelivery -->
+                <div class="partner-logo" style="flex-direction: column; gap: 5px;">
+                    <div style="display:flex; align-items:center;">
+                        <svg width="45" height="45" viewBox="0 0 64 64" fill="none">
+                            <path d="M8 26 L28 26 M4 34 L24 34 M12 42 L32 42" stroke="#ff8a00" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="46" cy="14" r="5" fill="#fff" />
+                            <path d="M46 22 L36 34 L28 30 M46 22 L48 34 L56 28 M46 22 L46 38 L40 48 L34 56 M46 38 L54 48 L50 60" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="52" y="6" width="10" height="10" fill="#111" stroke="#fff" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div style="font-size: 15px; font-weight: 700; letter-spacing: -0.5px;">
+                        <span style="color:#fff;">fast</span><span style="color:#ff8a00;">delivery</span>
+                    </div>
+                </div>
+
+                <!-- Logo 4: EXPRESS DELIVERY -->
+                <div class="partner-logo" style="flex-direction: column; gap: 5px;">
+                    <svg width="65" height="45" viewBox="0 0 80 50" fill="none">
+                        <path d="M10 15 L40 15 M5 25 L35 25 M15 35 L45 35" stroke="#ff8a00" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="55" cy="25" r="16" stroke="#fff" stroke-width="4"/>
+                        <polyline points="55,15 55,25 63,25" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div style="font-size: 14px; text-align: center; font-weight: 700; line-height: 1.1; letter-spacing: 0.5px;">
+                        <div style="color:#fff;">EXPRESS</div>
+                        <div style="color:#ff8a00;">DELIVERY</div>
+                    </div>
+                </div>
+
+                <!-- Logo 5: AIR EXPRESS -->
+                <div class="partner-logo" style="gap: 12px;">
+                    <div style="text-align: right; line-height: 1.1;">
+                        <div style="color:#fff; font-size: 20px; font-weight: 700; font-family: 'Times New Roman', serif;">AIR</div>
+                        <div style="color:#ff8a00; font-size: 17px; font-weight: 700; letter-spacing: 0.5px;">EXPRESS</div>
+                        <div style="color:#fff; font-size: 10px; font-style: italic; margin-top: 2px;">Choose the right way.</div>
+                    </div>
+                    <svg width="35" height="35" viewBox="0 0 40 40" fill="#ff8a00">
+                        <path d="M5 35 L35 35 L35 5 C35 5 25 15 15 35 Z" />
+                        <line x1="8" y1="18" x2="30" y2="18" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="5" y1="26" x2="22" y2="26" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 text-center gradient-bg text-white">
+        <div class="container py-5" data-aos="zoom-in">
+            <h2>Ready to Upgrade Your Logistics?</h2>
+            <p class="lead mb-4">Partner with the world's most reliable delivery network.</p>
+            <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5 py-3 fw-bold text-primary btn-ripple">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 footer-brand">
+                    <img src="images/logo.webp" alt="Stackly Logo" style="height: 65px; width: auto; object-fit: contain; margin-bottom: 20px;">
+                    <p class="footer-text">Delivering excellence globally. We are your trusted partner in logistics, warehousing, and express courier services.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tracking.html">Track Parcel</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Express Delivery</a></li>
+                        <li><a href="services.html">Warehousing</a></li>
+                        <li><a href="services.html">Corporate Logistics</a></li>
+                        <li><a href="services.html">E-commerce</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-newsletter">
+                    <h4 class="text-white">Newsletter</h4>
+                    <p class="footer-text">Subscribe for latest updates.</p>
+                    <form onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn btn-primary-custom w-100 btn-ripple">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2026 PostalService Corporate. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Go to top"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper('.service-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                    992: {
+                        slidesPerView: 4,
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

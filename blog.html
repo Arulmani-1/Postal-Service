@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Postal Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <style>
+        .blog-post-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+        }
+        .blog-post-title a {
+            color: #222;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .blog-post-title a:hover {
+            color: #ffb800;
+        }
+        .blog-meta {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+        .blog-meta .date-icon {
+            color: #ffb800;
+            margin-right: 5px;
+        }
+        .blog-meta .date-text {
+            color: #888;
+        }
+        .blog-meta .separator {
+            color: #ffb800;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+        .blog-meta .category {
+            color: #555;
+        }
+        .blog-excerpt {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .blog-tags {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 25px;
+        }
+        .blog-tags i {
+            color: #555;
+        }
+        .read-more-btn {
+            font-size: 10px;
+            font-weight: 800;
+            color: #111;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        .read-more-btn i {
+            font-size: 14px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        
+        .widget {
+            margin-bottom: 40px;
+        }
+        .widget-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111;
+            border-left: 3px solid #ffb800;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .widget-search .form-control {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            font-size: 13px;
+            padding: 12px 15px;
+        }
+        .widget-search .btn {
+            background-color: #ffb800;
+            color: #fff;
+            border: none;
+            padding: 0 20px;
+        }
+        .widget-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .widget-list li {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            font-size: 12px;
+            color: #666;
+        }
+        .widget-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .widget-list a {
+            color: #666;
+            text-decoration: none;
+            line-height: 1.5;
+            display: block;
+        }
+        .widget-list a:hover {
+            color: #ffb800;
+        }
+        .widget-about img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        .widget-about .name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 2px;
+        }
+        .widget-about .title {
+            font-size: 11px;
+            color: #888;
+        }
+        .tag-cloud {
+            font-size: 11px;
+            color: #666;
+            line-height: 2;
+        }
+        .tag-cloud span {
+            margin: 0 4px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="loader"><div class="loader-content">
+            <img src="images/logo.webp" alt="Loading...">
+        </div></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background: #0f172a !important;">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand fw-bold" href="index.html" style="color: #0d6efd;">
+                <img src="images/logo.webp" alt="Stackly Logo" style="height: 55px; width: auto; object-fit: contain;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-1 text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ourteam.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="404.html">404 Error Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white" href="tracking.html">Tracking</a></li>
+                    <li class="nav-item"><a class="nav-link active text-white" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="btn btn-login-custom ms-lg-3" href="login.html">Login <i class="bi bi-arrow-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5" style="padding-top: 140px !important; margin-top: 0; background: var(--bg-color);">
+        <div class="container py-4 text-center">
+            <h1 class="display-5 fw-bold mb-3" data-aos="fade-up">Logistics Insights & News</h1>
+            <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">Stay updated with the latest trends in global shipping and corporate logistics.</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    
+                    <!-- Post 1 -->
+                    <div class="blog-post mb-5 pb-5 border-bottom" data-aos="fade-up">
+                        <div class="blog-meta">
+                            <i class="bi bi-calendar3 date-icon"></i> <span class="date-text">14 May 2021</span> <span class="separator">|</span> <span class="category">Shipment</span>
+                        </div>
+                        <h2 class="blog-post-title mb-3"><a href="#">The Guide On How To Ship Heavy Haul & Oversize Loads</a></h2>
+                        <img src="images/logistics.webp" alt="Logistics" class="img-fluid w-100 mb-3" style="max-height: 400px; object-fit: cover;">
+                        <p class="blog-excerpt">What is virtual conferences? Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt [...]</p>
+                        <div class="blog-tags">
+                            <i class="bi bi-tags-fill me-2"></i> Tags: &nbsp; Investment
+                        </div>
+                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="blog-post mb-5 pb-5 border-bottom" data-aos="fade-up">
+                        <div class="blog-meta">
+                            <i class="bi bi-calendar3 date-icon"></i> <span class="date-text">14 May 2021</span> <span class="separator">|</span> <span class="category">Delivery</span>
+                        </div>
+                        <h2 class="blog-post-title mb-3"><a href="#">Cost Benefit Analysis: Shipping By Road Or Rail: Pros & Cons</a></h2>
+                        <img src="images/delivery.webp" alt="Delivery" class="img-fluid w-100 mb-3" style="max-height: 400px; object-fit: cover;">
+                        <p class="blog-excerpt">What is virtual conferences? Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt [...]</p>
+                        <div class="blog-tags">
+                            <i class="bi bi-tags-fill me-2"></i> Tags: &nbsp; Finance
+                        </div>
+                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Post 3 -->
+                    <div class="blog-post mb-5 pb-5 border-bottom" data-aos="fade-up">
+                        <div class="blog-meta">
+                            <i class="bi bi-calendar3 date-icon"></i> <span class="date-text">14 May 2021</span> <span class="separator">|</span> <span class="category">Cargo</span>
+                        </div>
+                        <h2 class="blog-post-title mb-3"><a href="#">Supply Chain Sustainability Made Possible With Our Freight Solutions</a></h2>
+                        <img src="images/team.webp" alt="Cargo" class="img-fluid w-100 mb-3" style="max-height: 400px; object-fit: cover;">
+                        <p class="blog-excerpt">What is virtual conferences? Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt [...]</p>
+                        <div class="blog-tags">
+                            <i class="bi bi-tags-fill me-2"></i> Tags: &nbsp; Marketing <span class="mx-1">|</span> Service
+                        </div>
+                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Post 4 -->
+                    <div class="blog-post mb-5 pb-5 border-bottom" data-aos="fade-up">
+                        <div class="blog-meta">
+                            <i class="bi bi-calendar3 date-icon"></i> <span class="date-text">8 May 2021</span> <span class="separator">|</span> <span class="category">Cargo</span>
+                        </div>
+                        <h2 class="blog-post-title mb-3"><a href="#">India's Largest Warehouse By Cargoton: Fast Growing Brand</a></h2>
+                        <img src="images/parcel.webp" alt="Warehouse" class="img-fluid w-100 mb-3" style="max-height: 400px; object-fit: cover;">
+                        <p class="blog-excerpt">What is virtual conferences? Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt [...]</p>
+                        <div class="blog-tags">
+                            <i class="bi bi-tags-fill me-2"></i> Tags: &nbsp; Agency <span class="mx-1">|</span> Marketing
+                        </div>
+                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Post 5 -->
+                    <div class="blog-post mb-5 pb-5 border-bottom" data-aos="fade-up">
+                        <div class="blog-meta">
+                            <i class="bi bi-calendar3 date-icon"></i> <span class="date-text">30 Apr 2021</span> <span class="separator">|</span> <span class="category">Delivery</span>
+                        </div>
+                        <h2 class="blog-post-title mb-3"><a href="#">Your Expedited Freight Partner For The Modern Era</a></h2>
+                        <img src="images/tracking.webp" alt="Crane" class="img-fluid w-100 mb-3" style="max-height: 400px; object-fit: cover;">
+                        <p class="blog-excerpt">What is virtual conferences? Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt [...]</p>
+                        <div class="blog-tags">
+                            <i class="bi bi-tags-fill me-2"></i> Tags: &nbsp; Agency <span class="mx-1">|</span> Service
+                        </div>
+                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="sticky-top" style="top: 120px; z-index: 10;">
+                    <!-- Search Widget -->
+                    <div class="widget widget-search">
+                        <div class="d-flex">
+                            <input type="text" class="form-control rounded-0 border-0" placeholder="Search">
+                            <button class="btn rounded-0 text-white fw-bold"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Posts Widget -->
+                    <div class="widget">
+                        <h4 class="widget-title">Recent Posts</h4>
+                        <ul class="widget-list">
+                            <li><a href="#">The Guide On How To Ship Heavy Haul & Oversize Loads</a></li>
+                            <li><a href="#">Cost Benefit Analysis: Shipping By Road Or Rail: Pros & Cons</a></li>
+                            <li><a href="#">Supply Chain Sustainability Made Possible With Our Freight Solutions</a></li>
+                            <li><a href="#">New Freight Rate Update: Cross-Border USA & Canada</a></li>
+                            <li><a href="#">Your Guide To Picking The Right Shipping Container</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Recent Comments Widget -->
+                    <div class="widget">
+                        <h4 class="widget-title">Recent Comments</h4>
+                        <p class="text-muted" style="font-size: 13px;">No comments to show.</p>
+                    </div>
+
+                    <!-- Archives Widget -->
+                    <div class="widget">
+                        <h4 class="widget-title">Archives</h4>
+                        <ul class="widget-list">
+                            <li><a href="#">May 2021</a></li>
+                            <li><a href="#">April 2021</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="widget">
+                        <h4 class="widget-title">Categories</h4>
+                        <ul class="widget-list">
+                            <li class="d-flex justify-content-between"><a href="#">Cargo</a> <span>(2)</span></li>
+                            <li class="d-flex justify-content-between"><a href="#">Delivery</a> <span>(3)</span></li>
+                            <li class="d-flex justify-content-between"><a href="#">Shipment</a> <span>(2)</span></li>
+                            <li class="d-flex justify-content-between"><a href="#">Transport</a> <span>(2)</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- About Me Widget -->
+                    <div class="widget">
+                        <h4 class="widget-title">About Me</h4>
+                        <div class="widget-about d-flex align-items-center mt-4">
+                            <img src="images/office.webp" alt="Loren Banks">
+                            <div>
+                                <div class="name">Loren Banks</div>
+                                <div class="title">Project Manager</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags Widget -->
+                    <div class="widget">
+                        <h4 class="widget-title">Tags</h4>
+                        <div class="tag-cloud">
+                            <a href="#" class="text-decoration-none text-muted">Agency</a> <span>|</span>
+                            <a href="#" class="text-decoration-none text-muted">Finance</a> <span>|</span>
+                            <a href="#" class="text-decoration-none text-muted">Investment</a> <span>|</span>
+                            <a href="#" class="text-decoration-none text-muted">Marketing</a> <span>|</span>
+                            <a href="#" class="text-decoration-none text-muted">Service</a>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 footer-brand">
+                    <img src="images/logo.webp" alt="Stackly Logo" style="height: 65px; width: auto; object-fit: contain; margin-bottom: 20px;">
+                    <p class="footer-text">Delivering excellence globally. We are your trusted partner in logistics, warehousing, and express courier services.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tracking.html">Track Parcel</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Express Delivery</a></li>
+                        <li><a href="services.html">Warehousing</a></li>
+                        <li><a href="services.html">Corporate Logistics</a></li>
+                        <li><a href="services.html">E-commerce</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-newsletter">
+                    <h4 class="text-white">Newsletter</h4>
+                    <p class="footer-text">Subscribe for latest updates.</p>
+                    <form onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn btn-primary-custom w-100 btn-ripple">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2026 PostalService Corporate. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top -->
+    <button id="back-to-top" title="Go to top"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | Postal Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Overlay -->
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="user_dashboard.html">
+                    <img src="images/logo.webp" alt="Stackly Logo" class="sidebar-logo">
+                </a>
+            </div>
+            
+            <div class="sidebar-menu">
+                <div class="menu-title">Main</div>
+                <ul>
+                    <li><a href="user_dashboard.html" class="active"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+                    <li><a href="user_dashboard_shipments.html"><i class="bi bi-box-seam"></i> My Shipments</a></li>
+                    <li><a href="user_dashboard_track.html"><i class="bi bi-geo-alt"></i> Track Parcel</a></li>
+                </ul>
+                
+                <div class="menu-title mt-4">Account</div>
+                <ul>
+                    <li><a href="user_dashboard_billing.html"><i class="bi bi-receipt"></i> Billing & Invoices</a></li>
+                    <li><a href="user_dashboard_profile.html"><i class="bi bi-person"></i> Profile Settings</a></li>
+                    <li><a href="user_dashboard_support.html"><i class="bi bi-headset"></i> Support</a></li>
+                </ul>
+            </div>
+            
+            </aside>
+
+        <!-- Main Content -->
+        <main class="main-wrapper">
+            
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+                <div class="d-flex align-items-center">
+                    <button class="mobile-toggle" onclick="toggleSidebar()">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <h5 class="mb-0 ms-2 fw-bold text-dark d-none d-md-block">Welcome back, <span class="user-name-display">User</span></h5>
+                </div>
+                
+                <div class="navbar-actions d-flex align-items-center"><span class="user-email-display me-3 fw-bold text-muted" style="font-size: 14px;"></span>
+                    
+                    <a href="login.html" class="action-btn text-danger ms-3" title="Logout">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area">
+                <div class="page-header">
+                    <h1 class="page-title">Welcome back, <span class="user-name-display">User</span>!</h1>
+                    <button class="btn btn-primary shadow-sm"><i class="bi bi-plus-lg me-2"></i> New Shipment</button>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="row g-4 mb-4">
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-icon blue"><i class="bi bi-truck"></i></div>
+                            <div class="stat-details">
+                                <span class="label">Active Shipments</span>
+                                <span class="value">12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-icon orange"><i class="bi bi-clock-history"></i></div>
+                            <div class="stat-details">
+                                <span class="label">Pending Delivery</span>
+                                <span class="value">4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-icon green"><i class="bi bi-check2-circle"></i></div>
+                            <div class="stat-details">
+                                <span class="label">Delivered (Month)</span>
+                                <span class="value">48</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-icon purple"><i class="bi bi-cash-stack"></i></div>
+                            <div class="stat-details">
+                                <span class="label">Total Spent</span>
+                                <span class="value">$1,240</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Shipments Table -->
+                <div class="table-card">
+                    <div class="table-card-header">
+                        <h2 class="table-card-title">Recent Shipments</h2>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">View All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-custom">
+                            <thead>
+                                <tr>
+                                    <th>Tracking ID</th>
+                                    <th>Destination</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">#STK-982341</td>
+                                    <td>New York, NY</td>
+                                    <td>Oct 12, 2026</td>
+                                    <td><span class="status-badge in-transit">In Transit</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">#STK-982290</td>
+                                    <td>Los Angeles, CA</td>
+                                    <td>Oct 10, 2026</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">#STK-981002</td>
+                                    <td>Chicago, IL</td>
+                                    <td>Oct 05, 2026</td>
+                                    <td><span class="status-badge delivered">Delivered</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('show');
+            document.querySelector('.sidebar-overlay').classList.toggle('show');
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const email = localStorage.getItem('userEmail');
+            if(email) {
+                document.querySelectorAll('.user-email-display').forEach(el => el.textContent = email);
+            }
+            const name = localStorage.getItem('userName');
+            if(name) {
+                document.querySelectorAll('.user-name-display').forEach(el => el.textContent = name);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

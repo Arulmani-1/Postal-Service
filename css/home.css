@@ -1,0 +1,759 @@
+/* =============================================
+   HOME PAGE - Logistics Section Styles
+   ============================================= */
+
+/* Text Accent Color Fix */
+.text-accent {
+  color: #00b894 !important;
+}
+.border-accent {
+  border-color: #00b894 !important;
+}
+
+/* ---- Logistics Section ---- */
+.logistics-section {
+  background: #ffffff;
+  padding: 80px 0 100px;
+}
+
+.logistics-header {
+  margin-bottom: 50px;
+}
+
+.logistics-tagline {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #00b894;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.logistics-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* ---- Logistics Cards ---- */
+.logistics-cards-row {
+  align-items: stretch;
+}
+
+.logistics-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 380px;
+  background: #f1f5f9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.logistics-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Wrapper */
+.logistics-card__img-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.logistics-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.logistics-card:hover .logistics-card__img {
+  transform: scale(1.06);
+}
+
+/* Gradient Overlay */
+.logistics-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.0) 30%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+/* Active / Hovered state darkens overlay */
+.logistics-card--active .logistics-card__overlay,
+.logistics-card:hover .logistics-card__overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 184, 148, 0.35) 0%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+/* Content */
+.logistics-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 22px 70px;
+  z-index: 2;
+}
+
+.logistics-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.logistics-card__desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.logistics-card:hover .logistics-card__desc,
+.logistics-card--active .logistics-card__desc {
+  max-height: 100px;
+  opacity: 1;
+}
+
+/* Top-left teal header bar for active card */
+.logistics-card--active .logistics-card__content {
+  background: linear-gradient(
+    to right,
+    rgba(0, 184, 148, 0.9) 0%,
+    transparent 60%
+  );
+  background-clip: padding-box;
+}
+
+/* Icon Badge */
+.logistics-card__icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: #0f172a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+
+.logistics-card__icon i {
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.logistics-card:hover .logistics-card__icon,
+.logistics-card--active .logistics-card__icon {
+  background: #00b894;
+  transform: scale(1.12) rotate(-6deg);
+}
+
+/* Active card: teal header overlay */
+.logistics-card--active .logistics-card__img-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 184, 148, 0.82) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensure content is above the teal overlay */
+.logistics-card--active .logistics-card__content,
+.logistics-card--active .logistics-card__icon {
+  z-index: 3;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 767px) {
+  .logistics-title {
+    font-size: 1.7rem;
+  }
+  .logistics-card {
+    height: 300px;
+  }
+}
+
+/* =============================================
+   SHARED HEADING UTILITIES (All new sections)
+   ============================================= */
+
+.home-section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.home-label-bar {
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background: #FFC107;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.home-section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+.home-title-accent {
+  color: #FFC107;
+}
+
+/* =============================================
+   GET THE BEST SERVICES SECTION
+   ============================================= */
+
+.best-services-section {
+  background: #ffffff;
+  padding: 90px 0;
+}
+
+/* Service Card */
+.bsv-card {
+  position: relative;
+  background: #f5f5f5;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  min-height: 180px;
+}
+.bsv-card:hover {
+  background: #fff;
+  border-color: #FFC107;
+  box-shadow: 0 8px 28px rgba(255, 193, 7, 0.15);
+}
+
+.bsv-num {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFC107;
+  line-height: 1;
+}
+
+.bsv-icon-wrap {
+  width: 60px;
+  height: 60px;
+  background: #ebebeb;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+.bsv-card:hover .bsv-icon-wrap {
+  background: #fff3cd;
+}
+.bsv-icon-wrap i {
+  font-size: 1.8rem;
+  color: #FFC107;
+}
+
+.bsv-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.bsv-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid #bbb;
+  border-radius: 50%;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+.bsv-card:hover .bsv-arrow {
+  border-color: #FFC107;
+  background: #FFC107;
+  color: #fff;
+}
+
+/* =============================================
+   ABOUT US HOME SECTION
+   ============================================= */
+
+.about-home-section {
+  background: #f8f9fa;
+  padding: 90px 0;
+}
+
+/* Experience Badge */
+.about-exp-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FFC107;
+  border-radius: 4px;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 8px 28px rgba(255, 193, 7, 0.35);
+  transition: transform 0.3s ease;
+}
+.about-exp-badge:hover {
+  transform: scale(1.04);
+}
+.about-exp-num {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.about-exp-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.3;
+}
+
+/* About Text */
+.about-home-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.about-home-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.about-home-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+.about-home-desc {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* About Buttons */
+.about-btn-primary {
+  background: #FFC107;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 13px 30px;
+  border-radius: 0;
+  border: 2px solid #FFC107;
+  transition: all 0.3s ease;
+}
+.about-btn-primary:hover {
+  background: #e6a800;
+  border-color: #e6a800;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 193, 7, 0.35);
+}
+.about-btn-dark {
+  background: #111;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 13px 30px;
+  border-radius: 0;
+  border: 2px solid #111;
+  transition: all 0.3s ease;
+}
+.about-btn-dark:hover {
+  background: transparent;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   OUR TALENTED TEAM SECTION
+   ============================================= */
+
+.team-home-section {
+  background: #ffffff;
+  padding: 90px 0;
+}
+
+.team-card {
+  background: #fff;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+}
+
+.team-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 260px;
+  background: #eee;
+}
+.team-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+.team-card:hover .team-card__img {
+  transform: scale(1.05);
+}
+
+.team-card__info {
+  padding: 16px 18px 18px;
+  text-align: center;
+}
+.team-card__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+.team-card__role {
+  font-size: 0.82rem;
+  color: #FFC107;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* =============================================
+   RECENT ARTICLES / BLOG SECTION
+   ============================================= */
+
+.blog-home-section {
+  background: #f8f9fa;
+  padding: 90px 0;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+}
+
+/* Image with rotated category label */
+.blog-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+.blog-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.blog-card:hover .blog-card__img {
+  transform: scale(1.06);
+}
+
+.blog-card__category {
+  position: absolute;
+  top: 32px;
+  left: -22px;
+  background: #FFC107;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 5px 28px;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+/* Body */
+.blog-card__body {
+  padding: 20px 22px 24px;
+}
+.blog-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.blog-card__date {
+  font-size: 0.78rem;
+  color: #FFC107;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.blog-card__author {
+  font-size: 0.78rem;
+  color: #888;
+}
+.blog-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.45;
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+.blog-card:hover .blog-card__title {
+  color: #FFC107;
+}
+.blog-card__link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #FFC107;
+  padding-bottom: 2px;
+  transition: color 0.3s ease, gap 0.3s ease;
+}
+.blog-card__link:hover {
+  color: #FFC107;
+  gap: 10px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+  .about-exp-badge {
+    width: 160px;
+    height: 160px;
+  }
+  .about-exp-num {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 767px) {
+  .home-section-title {
+    font-size: 1.7rem;
+  }
+  .about-home-title {
+    font-size: 1.5rem;
+  }
+  .team-card__img-wrap {
+    height: 200px;
+  }
+  .blog-card__img-wrap {
+    height: 180px;
+  }
+  .best-services-section,
+  .about-home-section,
+  .team-home-section,
+  .blog-home-section {
+    padding: 60px 0;
+  }
+}
+
+/* =============================================
+   HOW IT WORKS SECTION
+   ============================================= */
+
+.hiw-section {
+  background: #ffffff;
+  padding: 90px 0 100px;
+}
+
+/* Tagline */
+.hiw-tagline {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #00b894;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+/* Main Title */
+.hiw-main-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-bottom: 60px;
+}
+
+/* Steps Row */
+.hiw-steps-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+/* Individual Step */
+.hiw-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  max-width: 200px;
+  padding: 0 10px;
+}
+
+/* Icon Box */
+.hiw-icon-box {
+  width: 100px;
+  height: 100px;
+  background: #f5f7fa;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(0, 184, 148, 0.12),
+              0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+}
+.hiw-icon-box i {
+  font-size: 2.2rem;
+  color: #00b894;
+  transition: color 0.3s ease;
+}
+.hiw-step:hover .hiw-icon-box {
+  transform: translateY(-6px);
+  background: #00b894;
+  box-shadow: 0 14px 36px rgba(0, 184, 148, 0.28);
+}
+.hiw-step:hover .hiw-icon-box i {
+  color: #ffffff;
+}
+
+/* Step Title */
+.hiw-step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+/* Step Description */
+.hiw-step-desc {
+  font-size: 0.82rem;
+  color: #6b7280;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Curved Dashed Arrow between steps */
+.hiw-arrow {
+  flex-shrink: 0;
+  width: 120px;
+  margin-top: 28px; /* Align with center of icon boxes */
+  opacity: 0.75;
+}
+.hiw-arrow svg {
+  width: 100%;
+  height: 40px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+  .hiw-steps-wrap {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  .hiw-arrow {
+    display: none;
+  }
+  .hiw-step {
+    max-width: 180px;
+    flex: 0 0 40%;
+  }
+  .hiw-main-title {
+    font-size: 1.9rem;
+  }
+}
+@media (max-width: 575px) {
+  .hiw-step {
+    flex: 0 0 80%;
+    max-width: 260px;
+  }
+  .hiw-main-title {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+  }
+  .hiw-section {
+    padding: 60px 0;
+  }
+}

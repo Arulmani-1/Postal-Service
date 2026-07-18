@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #0D6EFD;
+  --secondary: #0056B3;
+  --accent: #FFC107;
+  --success: #28A745;
+  --bg-color: #F8FAFC;
+  --dark: #0F172A;
+  --white: #FFFFFF;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--dark);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+.dark-mode .glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+}
+
+/* Global Buttons */
+.btn-primary-custom {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.btn-primary-custom::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+.btn-primary-custom:hover::before {
+  opacity: 1;
+}
+.btn-primary-custom:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+}
+
+.btn-login-custom {
+  background: linear-gradient(90deg, #ff9f00, #ffcc00);
+  color: #ffffff !important;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-login-custom:hover {
+  background: linear-gradient(90deg, #e68f00, #e6b800);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 159, 0, 0.3);
+  color: #ffffff !important;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--dark);
+}
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+  color: var(--white);
+}
+.dark-mode {
+  background-color: var(--dark);
+  color: #CBD5E1;
+}
+
+/* Sections */
+section {
+  padding: 100px 0;
+  position: relative;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background: var(--primary);
+  bottom: -10px;
+  left: 20%;
+  border-radius: 2px;
+}
+
+/* Scroll Progress */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--accent);
+  z-index: 9999;
+}
+
+/* Back to Top */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primary);
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 1000;
+  border: none;
+  cursor: pointer;
+}
+#back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+#back-to-top:hover {
+  background: var(--secondary);
+  transform: translateY(-5px);
+}
+
+/* Loader */
+#loader {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: #0f172a; /* Always dark matching image */
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+.loader-content {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-content img {
+  width: 50px;
+  height: auto;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.loader-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 3px solid transparent;
+  border-top-color: #00e5ff;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('../images/hero.webp') center/cover;
+  color: var(--white);
+  overflow: hidden;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+.hero-3d-parcel {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Accent Color Utilities */
+.text-accent {
+  color: #00b894 !important;
+}
+.border-accent {
+  border-color: #00b894 !important;
+}
+
+/* Pulse animation for loader */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+
+/* Stats */
+.stat-item {
+  text-align: center;
+  padding: 30px;
+}
+.stat-icon {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.dark-mode .stat-number {
+  color: var(--white);
+}

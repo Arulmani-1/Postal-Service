@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Postal Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a;
+        }
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Premium photographic background */
+            background: url('images/office.webp') center/cover no-repeat;
+            position: relative;
+        }
+        
+        .login-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85); /* Dark overlay */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 30px 35px;
+            width: 100%;
+            max-width: 420px;
+            z-index: 2;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .login-logo {
+            height: 40px;
+            margin-bottom: 25px;
+            object-fit: contain;
+        }
+
+        .login-title {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .login-subtitle {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .input-group-custom {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-group-custom select,
+        .input-group-custom input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 12px 16px;
+            padding-right: 45px; /* Space for icon */
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            appearance: none; /* for select */
+        }
+
+        .input-group-custom input::placeholder {
+            color: #94a3b8;
+        }
+
+        .input-group-custom select:focus,
+        .input-group-custom input:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #f59e0b;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+        }
+        
+        /* Make select options readable in dark mode */
+        .input-group-custom option {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 10px;
+        }
+        
+        /* Placeholder styling for select */
+        .input-group-custom select:invalid,
+        .input-group-custom select option[value=""] {
+            color: #94a3b8;
+        }
+
+        .input-group-custom .icon-right {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            pointer-events: none;
+            font-size: 1.1rem;
+        }
+
+        .options-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+
+        .form-check-label {
+            color: #94a3b8;
+            cursor: pointer;
+        }
+        
+        .form-check-input {
+            background-color: transparent;
+            border-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            margin-top: 0.15rem;
+        }
+        
+        .form-check-input:checked {
+            background-color: #f59e0b;
+            border-color: #f59e0b;
+        }
+
+        .forgot-link {
+            color: #f59e0b;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .forgot-link:hover {
+            color: #fbbf24;
+            text-decoration: underline;
+        }
+
+        .btn-signin {
+            background: #fbb324;
+            color: #0f172a;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .btn-signin:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
+        }
+
+        .signup-text {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+        }
+
+        .signup-link {
+            color: #f59e0b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .signup-link:hover {
+            color: #fbbf24;
+            text-decoration: underline;
+        }
+
+        .btn-home {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 6px 18px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-home:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-card">
+            <!-- Logo -->
+            <img src="images/logo.webp" alt="Stackly Logo" class="login-logo">
+            
+            <!-- Titles -->
+            <h2 class="login-title">Client Portal</h2>
+            <p class="login-subtitle">Sign in to track your project progress</p>
+            
+            <form onsubmit="event.preventDefault(); handleLogin();">
+                
+                <!-- Role Dropdown -->
+                <div class="input-group-custom text-start">
+                    <select id="role" required>
+                        <option value="" disabled selected hidden>Select Role</option>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <i class="bi bi-chevron-down icon-right"></i>
+                </div>
+
+                <!-- Email Field -->
+                <div class="input-group-custom text-start">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <i class="bi bi-envelope icon-right"></i>
+                </div>
+
+                <!-- Password Field -->
+                <div class="input-group-custom text-start">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="bi bi-eye-slash icon-right"></i>
+                </div>
+
+                <!-- Options Row -->
+                <div class="options-row">
+                    <div class="form-check m-0 d-flex align-items-center gap-2">
+                        <input type="checkbox" class="form-check-input m-0" id="remember">
+                        <label class="form-check-label" for="remember">Remember Me</label>
+                    </div>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-signin">Sign In</button>
+            </form>
+
+            <!-- Signup Link -->
+            <div class="signup-text">
+                Don't have an account? <a href="signup.html" class="signup-link">Sign Up</a>
+            </div>
+
+            <!-- Back to Home -->
+            <a href="index.html" class="btn-home">
+                <i class="bi bi-house-door"></i> Go to Home
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function handleLogin() {
+            const role = document.getElementById('role').value;
+            const email = document.getElementById('email').value;
+            if(email) {
+                localStorage.setItem('userEmail', email);
+            }
+            if (role === 'admin') {
+                window.location.href = 'admin_dashboard.html';
+            } else {
+                window.location.href = 'user_dashboard.html';
+            }
+        }
+    </script>
+</body>
+</html>
