@@ -62,16 +62,16 @@
 
             <!-- Dashboard Content -->
             <div class="content-area">
-    <div class="page-header"><h1 class="page-title">All Shipments</h1><div class="d-flex gap-2"><button class="btn btn-outline-secondary"><i class="bi bi-filter"></i> Filter</button><button class="btn btn-primary"><i class="bi bi-download"></i> Export Data</button></div></div>
+    <div class="page-header"><h1 class="page-title">All Shipments</h1><div class="d-flex gap-2"><button class="btn btn-outline-secondary" onclick="window.location.href='dashboard_404.html'"><i class="bi bi-filter"></i> Filter</button><button class="btn btn-primary" onclick="window.location.href='dashboard_404.html'"><i class="bi bi-download"></i> Export Data</button></div></div>
     <div class="table-card">
         <div class="table-responsive">
             <table class="table table-custom">
                 <thead><tr><th>ID</th><th>Customer</th><th>Origin</th><th>Destination</th><th>Status</th><th>Actions</th></tr></thead>
                 <tbody>
-                    <tr><td class="fw-bold">#STK-10002</td><td>Acme Corp</td><td>NY, USA</td><td>LDN, UK</td><td><span class="status-badge in-transit">In Transit</span></td><td><button class="btn btn-sm btn-light"><i class="bi bi-three-dots"></i></button></td></tr>
-                    <tr><td class="fw-bold">#STK-10003</td><td>John Doe</td><td>LA, USA</td><td>NY, USA</td><td><span class="status-badge pending">Pending</span></td><td><button class="btn btn-sm btn-light"><i class="bi bi-three-dots"></i></button></td></tr>
-                    <tr><td class="fw-bold">#STK-10004</td><td>Global Tech</td><td>SGP</td><td>TOK, JPN</td><td><span class="status-badge delivered">Delivered</span></td><td><button class="btn btn-sm btn-light"><i class="bi bi-three-dots"></i></button></td></tr>
-                    <tr><td class="fw-bold">#STK-10005</td><td>JD Enterprises</td><td>CHI, USA</td><td>MIA, USA</td><td><span class="status-badge delivered">Delivered</span></td><td><button class="btn btn-sm btn-light"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr><td class="fw-bold">#STK-10002</td><td>Acme Corp</td><td>NY, USA</td><td>LDN, UK</td><td><span class="status-badge in-transit" style="cursor:pointer;" onclick="window.location.href='dashboard_404.html'">In Transit</span></td><td><button class="btn btn-sm btn-light" onclick="window.location.href='dashboard_404.html'"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr><td class="fw-bold">#STK-10003</td><td>John Doe</td><td>LA, USA</td><td>NY, USA</td><td><span class="status-badge pending">Pending</span></td><td><button class="btn btn-sm btn-light" onclick="window.location.href='dashboard_404.html'"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr><td class="fw-bold">#STK-10004</td><td>Global Tech</td><td>SGP</td><td>TOK, JPN</td><td><span class="status-badge delivered" style="cursor:pointer;" onclick="window.location.href='dashboard_404.html'">Delivered</span></td><td><button class="btn btn-sm btn-light" onclick="window.location.href='dashboard_404.html'"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr><td class="fw-bold">#STK-10005</td><td>JD Enterprises</td><td>CHI, USA</td><td>MIA, USA</td><td><span class="status-badge delivered" style="cursor:pointer;" onclick="window.location.href='dashboard_404.html'">Delivered</span></td><td><button class="btn btn-sm btn-light" onclick="window.location.href='dashboard_404.html'"><i class="bi bi-three-dots"></i></button></td></tr>
                 </tbody>
             </table>
         </div>

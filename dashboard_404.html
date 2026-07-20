@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-image {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('images/logistics.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .error-content {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+        }
+        .error-code {
+            font-size: 150px;
+            font-weight: 800;
+            color: #ffb800;
+            line-height: 1;
+            margin-bottom: 20px;
+            animation: jump 1.5s ease-in-out infinite;
+        }
+        .error-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 25px;
+            animation: slide 2s ease-in-out infinite;
+        }
+        .error-desc {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .btn-custom {
+            background-color: #ffb800;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 4px;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 16px;
+        }
+        .btn-custom:hover {
+            background-color: #e6a600;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        @keyframes slide {
+            0%, 100% { transform: translateX(-20px); }
+            50% { transform: translateX(20px); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+                margin-bottom: 15px;
+            }
+            .error-title {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+            .error-desc {
+                font-size: 15px;
+                margin-bottom: 30px;
+            }
+            .buttons-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btn-custom {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <div class="error-title">Page Not Found</div>
+            <div class="error-desc">
+                The page you are looking for might have been removed, had its name changed,
+                or is temporarily unavailable. Let's get you back on track to building the future.
+            </div>
+            <div class="buttons-container">
+                <a href="#" onclick="history.back(); return false;" class="btn-custom">
+                    <i class="bi bi-arrow-left"></i> Go Back
+                </a>
+                <a href="#" onclick="goToDashboard(); return false;" class="btn-custom">
+                    <i class="bi bi-grid-fill"></i> Go To Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToDashboard() {
+            if (document.referrer && document.referrer.includes('admin')) {
+                window.location.href = 'admin_dashboard.html';
+            } else {
+                window.location.href = 'user_dashboard.html';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -61,12 +61,10 @@
 
             <!-- Dashboard Content -->
             <div class="content-area">
-                <div class="d-md-none mb-3">
-                    <h5 class="fw-bold text-dark">Welcome back, <span class="user-name-display">User</span></h5>
-                </div>
+                <!-- Mobile Duplicate Text Removed -->
                 <div class="page-header">
                     <h1 class="page-title">Welcome back, <span class="user-name-display">User</span>!</h1>
-                    <button class="btn btn-primary shadow-sm"><i class="bi bi-plus-lg me-2"></i> New Shipment</button>
+                    <button class="btn btn-primary shadow-sm" onclick="window.location.href='dashboard_404.html'"><i class="bi bi-plus-lg me-2"></i> New Shipment</button>
                 </div>
 
                 <!-- Stats Row -->
@@ -113,7 +111,7 @@
                 <div class="table-card">
                     <div class="table-card-header">
                         <h2 class="table-card-title">Recent Shipments</h2>
-                        <a href="#" class="btn btn-sm btn-outline-secondary">View All</a>
+                        <a href="dashboard_404.html" class="btn btn-sm btn-outline-secondary">View All</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-custom">
@@ -130,7 +128,7 @@
                                     <td class="fw-bold">#STK-982341</td>
                                     <td>New York, NY</td>
                                     <td>Oct 12, 2026</td>
-                                    <td><span class="status-badge in-transit">In Transit</span></td>
+                                    <td><span class="status-badge in-transit" style="cursor:pointer;" onclick="window.location.href='dashboard_404.html'">In Transit</span></td>
                                 </tr>
                                 <tr>
                                     <td class="fw-bold">#STK-982290</td>
@@ -142,7 +140,7 @@
                                     <td class="fw-bold">#STK-981002</td>
                                     <td>Chicago, IL</td>
                                     <td>Oct 05, 2026</td>
-                                    <td><span class="status-badge delivered">Delivered</span></td>
+                                    <td><span class="status-badge delivered" style="cursor:pointer;" onclick="window.location.href='dashboard_404.html'">Delivered</span></td>
                                 </tr>
                             </tbody>
                         </table>
