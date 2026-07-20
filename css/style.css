@@ -185,6 +185,59 @@ section {
   opacity: 1;
   visibility: visible;
 }
+
+/* Our Team Page Card */
+.our-team-card {
+  margin-bottom: 30px;
+}
+.our-team-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.our-team-socials {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.our-team-card:hover .our-team-socials {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.our-team-socials a {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.our-team-socials a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+.our-team-info h5 {
+  font-size: 16px;
+  color: #111;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.5px;
+}
+.our-team-info p {
+  font-size: 12px;
+  color: #888;
+}
 #back-to-top:hover {
   background: var(--secondary);
   transform: translateY(-5px);
